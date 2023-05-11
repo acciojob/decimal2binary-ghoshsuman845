@@ -1,15 +1,24 @@
 function decimalToBinary(num){
-let bin = 0;
-let rem, i = 1, step = 1;
-while (x != 0) {
-rem = x % 2;
-x = parseInt(x / 2);
-bin = bin + rem * i;
-i = i * 10;
-}
-console.log(Binary: ${bin});
-}
+    let binaryStr = ""
 
-return parseInt(binaryStr.split("").reverse().join(""))
+    while(num>0){
+
+        let rem = num%2;
+
+        // Method 1 - Appending the new binary character to the front of the string
+        // binaryStr = rem.toString() + binaryStr
+
+        // Method 2 - Append it to the end
+        binaryStr = binaryStr + rem.toString()
+
+        num = Math.floor(num/2)
+    }
+    // Method - 1
+    // return binaryStr
+
+
+    // Method 2- Reverse it
+    return binaryStr.split("").reverse().join("")
+}
 
 module.exports = decimalToBinary;
